@@ -552,6 +552,8 @@ function initAnchorClipboard(){
         e.clearSelection();
         e.trigger.setAttribute( 'aria-label', window.T_Link_copied_to_clipboard );
         e.trigger.classList.add( 'tooltipped', 'tooltipped-s'+(isRtl?'e':'w') );
+        history.replaceState({},"",e.text);
+        e.trigger.scrollIntoView({behavior: "smooth"});
     });
 }
 
